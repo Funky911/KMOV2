@@ -8,7 +8,7 @@
 
     // Wait for Cordova to load
     //
-    document.addEventListener("deviceready", onDeviceReady, true);
+    document.addEventListener("deviceready", onDeviceReady, false);
 
     // Cordova is ready
     //
@@ -19,11 +19,10 @@
          ref.addEventListener('exit', function() { alert(event.type); });
     }
 
+		onDeviceReady();
+
     </script>
   </head>
   <body>
-    <script type="text/javascript" charset="utf-8">
-		onDeviceReady();
-    </script>
   </body>
 </html>
