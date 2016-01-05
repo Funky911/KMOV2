@@ -1,29 +1,23 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <title>InAppBrowser.addEventListener Example</title>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <title>Hello World</title>
+        <script type="text/javascript" src="cordova.js" charset="utf-8"></script>
+        <script type="text/javascript" charset="utf-8">
+          function onBodyLoad(){
+            document.addEventListener("deviceready", onDeviceReady, false);
+          }
 
-    <script type="text/javascript" charset="utf-8" src="src/cordova.js"></script>
-    <script type="text/javascript" charset="utf-8" src="src/scripts/bootstrap.js"></script>
-    <script type="text/javascript" charset="utf-8" src="src/scripts/require.js"></script>
-    <script type="text/javascript" charset="utf-8">
-
-    // Wait for Cordova to load
-    //
-    onDeviceReady();
-    document.addEventListener("deviceready", onDeviceReady, false);
-
-    // Cordova is ready
-    //
-    function onDeviceReady() {
-         var ref = window.open('http://dir.bg', '_blank', 'location=yes');
-         ref.addEventListener('loadstart', function() { alert('start: ' + event.url); });
-         ref.addEventListener('loadstop', function() { alert('stop: ' + event.url); });
-         ref.addEventListener('exit', function() { alert(event.type); });
-    }
-
-    </script>
-  </head>
-  <body>
-  </body>
+          function onDeviceReady(){
+            navigator.notification.alert("Hello phonegap!");
+          }
+        </script>
+    </head>
+    <body onload='onBodyLoad()'>
+        <h1> Hello world! </h1>
+        <p> This is a sample phonegap application </p>
+    </body>
 </html>
